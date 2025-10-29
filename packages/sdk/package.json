@@ -62,7 +62,7 @@
     "tonal": "^6.0.0",
     "tsup": "^8.3.5",
     "typescript": "^5.6.3",
-    "vitest": "^4.0.4"
+    "vitest": "^4.0.5"
   },
   "license": "SEE LICENSE IN LICENSE",
   "publishConfig": {

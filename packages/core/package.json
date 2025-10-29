@@ -67,11 +67,11 @@
   "devDependencies": {
     "@music-reasoning/types": "workspace:*",
     "@types/node": "^22.0.0",
-    "@vitest/coverage-v8": "^4.0.4",
+    "@vitest/coverage-v8": "^4.0.5",
     "tonal": "^6.0.0",
     "tsup": "^8.3.5",
     "tsx": "^4.0.0",
     "typescript": "^5.6.3",
-    "vitest": "^4.0.4"
+    "vitest": "^4.0.5"
   }
 }
