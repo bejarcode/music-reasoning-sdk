@@ -1,0 +1,67 @@
+{
+  "name": "@music-reasoning/types",
+  "version": "0.1.0",
+  "description": "TypeScript type definitions for Music Reasoning SDK",
+  "author": "Bejar LLC <me@victorbejar.com> (https://musicreasoningsdk.com)",
+  "homepage": "https://musicreasoningsdk.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bejarcode/music-reasoning-sdk.git",
+    "directory": "packages/types"
+  },
+  "bugs": {
+    "url": "https://github.com/bejarcode/music-reasoning-sdk/issues",
+    "email": "me@victorbejar.com"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./chord": {
+      "types": "./dist/chord.d.ts"
+    },
+    "./scale": {
+      "types": "./dist/scale.d.ts"
+    },
+    "./progression": {
+      "types": "./dist/progression.d.ts"
+    },
+    "./genre-pattern": {
+      "types": "./dist/genre-pattern.d.ts"
+    },
+    "./tier": {
+      "types": "./dist/tier.d.ts"
+    },
+    "./error": {
+      "types": "./dist/error.d.ts"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist .tsbuildinfo"
+  },
+  "keywords": [
+    "music-theory",
+    "types",
+    "typescript"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3"
+  }
+}
