@@ -11,7 +11,7 @@ jobs:
 
     steps:
       # 1. Checkout private repo
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0  # Full history for changelog generation
 
