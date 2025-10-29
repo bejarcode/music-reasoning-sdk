@@ -52,16 +52,6 @@ importers:
         specifier: ^4.0.4
         version: 4.0.4(@types/node@20.19.20)(tsx@4.20.6)(yaml@2.8.1)
 
-  apps/web:
-    dependencies:
-      '@music-reasoning/sdk':
-        specifier: workspace:*
-        version: link:../../packages/sdk
-    devDependencies:
-      typescript:
-        specifier: ^5.6.3
-        version: 5.9.3
-
   packages/ai-local:
     dependencies:
       '@music-reasoning/core':
@@ -71,8 +61,8 @@ importers:
         specifier: workspace:*
         version: link:../types
       node-llama-cpp:
-        specifier: ^3.1.1
-        version: 3.14.0(typescript@5.9.3)
+        specifier: ^3.14.2
+        version: 3.14.2(typescript@5.9.3)
     devDependencies:
       tsup:
         specifier: ^8.3.5
@@ -636,80 +626,80 @@ packages:
   '@manypkg/get-packages@1.1.3':
     resolution: {integrity: sha512-fo+QhuU3qE/2TQMQmbVMqaQ6EWbMhi4ABWP+O4AM1NqPBuy0OrApV5LO6BrrgnhtAHS2NH6RrVk9OL181tTi8A==}
 
-  '@node-llama-cpp/linux-arm64@3.14.0':
-    resolution: {integrity: sha512-Ayn+boDjmfu+6arJn0kh9tlFFhA6hB4YVflrxF9O9rqc7htRd+JsF3rzSd6FLDiPBP62mKtg6R4xDqbC7Ut9vg==}
+  '@node-llama-cpp/linux-arm64@3.14.2':
+    resolution: {integrity: sha512-91DsZahNMvV+ZgU8KsUYQEUUAvZ1bMxxAhWiUN5hPFILyO9HJoX81KYLALGq1QIH25fWucR+brHXV2Ki2qfryQ==}
     engines: {node: '>=20.0.0'}
     cpu: [arm64, x64]
     os: [linux]
 
-  '@node-llama-cpp/linux-armv7l@3.14.0':
-    resolution: {integrity: sha512-+9kHl9/7zgEbqYnRlXD41OSBZA19nlUUbTewR7GnRuU47iFScp4FklijPfivaDxg8Xlp+g6M47GduByifMPqKg==}
+  '@node-llama-cpp/linux-armv7l@3.14.2':
+    resolution: {integrity: sha512-VwB07iG/1W8d4P+q1HEh3A8doTLhZUoGSYDIEBRiVHbkByAN0jL1F6lcMx5AeXEEDqcJIHBnmjsx2qhEJ+l77Q==}
     engines: {node: '>=20.0.0'}
     cpu: [arm, x64]
     os: [linux]
 
-  '@node-llama-cpp/linux-x64-cuda-ext@3.14.0':
-    resolution: {integrity: sha512-/OMo+ElsEejDxRaOHZjpw7wolmRllnk7J4mQKt+yk+LjkQZe6a3fQlM1YiCexpBGFSAu+1exU8L+oXdhOrK8OQ==}
+  '@node-llama-cpp/linux-x64-cuda-ext@3.14.2':
+    resolution: {integrity: sha512-aT1ecrCYfnMA31dF2p+ux7vLXHfhBW7ihfxSjc5pN/LCRZyb6BhQaIP44DA3H7U9O43tQMc5TakMq8pf9g3UxA==}
     engines: {node: '>=20.0.0'}
     cpu: [x64]
     os: [linux]
 
-  '@node-llama-cpp/linux-x64-cuda@3.14.0':
-    resolution: {integrity: sha512-BhRoNvUSM+63Z6TczvCSvLHNX4kIRVaABw7547htrPabyBNkfRD604Zq+vACHjADGNLp2AlXTqJHMmszA7KfdA==}
+  '@node-llama-cpp/linux-x64-cuda@3.14.2':
+    resolution: {integrity: sha512-gfjbzuTUFDVzHJ/HnGyaA8V/gRVlJMomDIkWUk9Vby6oXnrtMLmlPgrNtdx/jWZ3JBC/GwEP0INI0Obc+eGUmQ==}
     engines: {node: '>=20.0.0'}
     cpu: [x64]
     os: [linux]
 
-  '@node-llama-cpp/linux-x64-vulkan@3.14.0':
-    resolution: {integrity: sha512-0Gp1VAbeWIFc7Hkbvs5yuWw5i1A3Yo+7Q6uWXDzNUg50m0PrrF8evQWL2arp/lZINkDxI0JfpEoc+jFvdj3a8g==}
+  '@node-llama-cpp/linux-x64-vulkan@3.14.2':
+    resolution: {integrity: sha512-0chWnMbefnxxTRSCMugfuFckLRhz5pm/uZ7JftOXyFbSjAStnzLV0RZczaLYU5O53V2xIgSo6kXTnFHpqjRYyA==}
     engines: {node: '>=20.0.0'}
     cpu: [x64]
     os: [linux]
 
-  '@node-llama-cpp/linux-x64@3.14.0':
-    resolution: {integrity: sha512-flqBnK0PQcdrQQA/+eNl+nCJyXWpqItdkiPdiE9MxpF6PVoU07lBupkf/s3vXZpLC2ZU+8y/5me36tB4JGH23A==}
+  '@node-llama-cpp/linux-x64@3.14.2':
+    resolution: {integrity: sha512-gjDw2WVoSHmqq+QS4uyp0WNOyGklFndhqnxyXNtIwQj+4Zpp4+2+DI6pubGuNcbmU57pICCwu39em5rpjGPm5g==}
     engines: {node: '>=20.0.0'}
     cpu: [x64]
     os: [linux]
 
-  '@node-llama-cpp/mac-arm64-metal@3.14.0':
-    resolution: {integrity: sha512-u+s8CLceE1yN86wSxGgHqrnKNkJKLtVMxGcP1lWdY43RNQvM+Rb63zfc54L1NG9LNgldYbAEs/8HObRf7/i3Lw==}
+  '@node-llama-cpp/mac-arm64-metal@3.14.2':
+    resolution: {integrity: sha512-b1PS20LuwVfxPYCjhNU9/9D5opUe51T4ZF6agUIch9G9LFCcK8UvXi2GORE+RO1mK4C+1AsUOlvYERjjNBiClw==}
     engines: {node: '>=20.0.0'}
     cpu: [arm64, x64]
     os: [darwin]
 
-  '@node-llama-cpp/mac-x64@3.14.0':
-    resolution: {integrity: sha512-caaOePiO0Rp4pxJRO2yeRs2K3FHF2DxJYHdEN6iqL4rK6n3vuy72nnHe1IaIV8CNmKQkv6n1DELM1WvLhs/sQA==}
+  '@node-llama-cpp/mac-x64@3.14.2':
+    resolution: {integrity: sha512-S4L2FCnrF89fDaEdqJq5ju1Iep69+wcWsp5GiNTsx7jybj9n5r7yjn0NzYsErzlQ+5XxQLk9v2Kf/fGnRnqsbQ==}
     engines: {node: '>=20.0.0'}
     cpu: [x64]
     os: [darwin]
 
-  '@node-llama-cpp/win-arm64@3.14.0':
-    resolution: {integrity: sha512-w3u5WK9dvOQXqyquulbvY8Az/Aw/mufTSfM/Xpy7bBMygEVZU2BE+GB0xh4U5sKYdA22dFocrrNpjm6QXb8uzA==}
+  '@node-llama-cpp/win-arm64@3.14.2':
+    resolution: {integrity: sha512-LAM5lpgZjcQHTp3kMKvM/znGVvQ6xLkeyvxyfuGOQzhN6UjuMZ+h0qiPp+V0b2UlBjLvWC5kcq8a5Yn9gsgE1Q==}
     engines: {node: '>=20.0.0'}
     cpu: [arm64, x64]
     os: [win32]
 
-  '@node-llama-cpp/win-x64-cuda-ext@3.14.0':
-    resolution: {integrity: sha512-S35Sk1F50lgR19g3blBRDAj+VZFbPd3wZ9q+EfF4qddjR8ArXHrhm6mc6yqHyBusZtG0yx4LAcWFiUHolY2N5A==}
+  '@node-llama-cpp/win-x64-cuda-ext@3.14.2':
+    resolution: {integrity: sha512-2Gw/keMvLEa5lJ2+DcAvG9RHTGYIbYiwHDsdERC05WZhHnZgD75lfrhEucxajpdTUCYffli6nB+Ajwl5UFB5sw==}
     engines: {node: '>=20.0.0'}
     cpu: [x64]
     os: [win32]
 
-  '@node-llama-cpp/win-x64-cuda@3.14.0':
-    resolution: {integrity: sha512-fTDnohKivAsq7A6uB5GO+RqwLhVHIy96Emr1XgYqLjt5hIugJkVocNFSSmNMq2ZFF3cNkWGG/2uTTGJX1GysFA==}
+  '@node-llama-cpp/win-x64-cuda@3.14.2':
+    resolution: {integrity: sha512-ASl+/st27KwEGbAF0DaegoLAopPJAqcYlEs9yygl9NcoJuNvszzZpcQOQvxJckOWJTJ3NCDdRLzZf9eDz+MtIg==}
     engines: {node: '>=20.0.0'}
     cpu: [x64]
     os: [win32]
 
-  '@node-llama-cpp/win-x64-vulkan@3.14.0':
-    resolution: {integrity: sha512-JcmLhC0cb6BQwDFy7NaT/jV2HcRIJnW8zmZX2Y1WXuvXNYzI2W0a0JqjLXKHbsbgk64RSam95+QjQEOV0eL6JA==}
+  '@node-llama-cpp/win-x64-vulkan@3.14.2':
+    resolution: {integrity: sha512-QaF/X3bdB3Nv5iVaieR0dnI3fOQ8vluQz3gvLhKfTYHVwFx2MZigRL8zz1dT6tWl+XgxpF3tKr9Kexm2XcJTVw==}
     engines: {node: '>=20.0.0'}
     cpu: [x64]
     os: [win32]
 
-  '@node-llama-cpp/win-x64@3.14.0':
-    resolution: {integrity: sha512-/NLu7IiwGldXV3CIlz/fnlagb1PZELDypYybsq9Jktz+7Dtl/r9urQ7oaea9Gjbj/DJIRKSd+2rAbfEXbEigGg==}
+  '@node-llama-cpp/win-x64@3.14.2':
+    resolution: {integrity: sha512-ZLIqBWnYI0W+vYB4GxMeteHPmIG9JVVQSMOy2Za7XpILvUqAYYD/sAFKTORnLTm7VPge2S8UNmA2haFpt8q/UA==}
     engines: {node: '>=20.0.0'}
     cpu: [x64]
     os: [win32]
@@ -790,14 +780,14 @@ packages:
     peerDependencies:
       '@octokit/core': '>=6'
 
-  '@octokit/plugin-paginate-rest@13.2.0':
-    resolution: {integrity: sha512-YuAlyjR8o5QoRSOvMHxSJzPtogkNMgeMv2mpccrvdUGeC3MKyfi/hS+KiFwyH/iRKIKyx+eIMsDjbt3p9r2GYA==}
+  '@octokit/plugin-paginate-rest@13.2.1':
+    resolution: {integrity: sha512-Tj4PkZyIL6eBMYcG/76QGsedF0+dWVeLhYprTmuFVVxzDW7PQh23tM0TP0z+1MvSkxB29YFZwnUX+cXfTiSdyw==}
     engines: {node: '>= 20'}
     peerDependencies:
       '@octokit/core': '>=6'
 
-  '@octokit/plugin-rest-endpoint-methods@16.1.0':
-    resolution: {integrity: sha512-nCsyiKoGRnhH5LkH8hJEZb9swpqOcsW+VXv1QoyUNQXJeVODG4+xM6UICEqyqe9XFr6LkL8BIiFCPev8zMDXPw==}
+  '@octokit/plugin-rest-endpoint-methods@16.1.1':
+    resolution: {integrity: sha512-VztDkhM0ketQYSh5Im3IcKWFZl7VIrrsCaHbDINkdYeiiAsJzjhS2xRFCSJgfN6VOcsoW4laMtsmf3HcNqIimg==}
     engines: {node: '>= 20'}
     peerDependencies:
       '@octokit/core': '>=6'
@@ -822,8 +812,8 @@ packages:
     resolution: {integrity: sha512-TXnouHIYLtgDhKo+N6mXATnDBkV05VwbR0TtMWpgTHIoQdRQfCSzmy/LGqR1AbRMbijq/EckC/E3/ZNcU92NaQ==}
     engines: {node: '>= 20'}
 
-  '@octokit/types@15.0.0':
-    resolution: {integrity: sha512-8o6yDfmoGJUIeR9OfYU0/TUJTnMPG2r68+1yEdUeG2Fdqpj8Qetg0ziKIgcBm0RW/j29H41WP37CYCEhp6GoHQ==}
+  '@octokit/types@15.0.1':
+    resolution: {integrity: sha512-sdiirM93IYJ9ODDCBgmRPIboLbSkpLa5i+WLuXH8b8Atg+YMLAyLvDDhNWLV4OYd08tlvYfVm/dw88cqHWtw1Q==}
 
   '@octokit/webhooks-methods@6.0.0':
     resolution: {integrity: sha512-MFlzzoDJVw/GcbfzVC1RLR36QqkTLUf79vLVO3D+xn7r0QgxnFoLZgtrzxiQErAjFUOdH6fas2KeQJ1yr/qaXQ==}
@@ -1200,8 +1190,8 @@ packages:
   '@tonaljs/voicing@5.1.2':
     resolution: {integrity: sha512-Zk/8yPV+POxXq7bk9DermlTF86AmVxzN1ZNzK+hNtHF29Zah+w0xz+rEzKhQtU4q9vuqB4iGQO0q76VcbIDMew==}
 
-  '@types/aws-lambda@8.10.156':
-    resolution: {integrity: sha512-LElQP+QliVWykC7OF8dNr04z++HJCMO2lF7k9HuKoSDARqhcjHq8MzbrRwujCSDeBHIlvaimbuY/tVZL36KXFQ==}
+  '@types/aws-lambda@8.10.157':
+    resolution: {integrity: sha512-ofjcRCO1N7tMZDSO11u5bFHPDfUFD3Q9YK9g4S4w8UDKuG3CNlw2lNK1sd3Itdo7JORygZmG4h9ZykS8dlXvMA==}
 
   '@types/chai@5.2.3':
     resolution: {integrity: sha512-Mw558oeA9fFbv65/y4mHtXDs9bPnFMZAL/jxdPFUpOHHIXX91mcgEHbS5Lahr+pwZFR8A7GQleRWeI6cGFC2UA==}
@@ -1396,8 +1386,8 @@ packages:
   asynckit@0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
 
-  axios@1.12.2:
-    resolution: {integrity: sha512-vMJzPewAlRyOgxV2dU0Cuz2O8zzzx9VYtbJOaBgXFeLc4IV/Eg50n4LowmehOOR61S8ZMpc2K5Sa7g6A4jfkUw==}
+  axios@1.13.1:
+    resolution: {integrity: sha512-hU4EGxxt+j7TQijx1oYdAjw4xuIp1wRQSsbMFwSthCWeBQur1eF+qJ5iQ5sN3Tw8YRzQNKb8jszgBdMDVqwJcw==}
 
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
@@ -2203,8 +2193,8 @@ packages:
   node-api-headers@1.6.0:
     resolution: {integrity: sha512-81T99+mWLZnxX0LlZPYuafyFlxVVaWKQ0BDAbSrOqLO+v+gzCzu0GTAVNeVK8lucqjqo9L/1UcK9cpkem8Py4Q==}
 
-  node-llama-cpp@3.14.0:
-    resolution: {integrity: sha512-k6scfmM2zAQVqDAn3HYB+dq/Dl7Mj7SQyPv7TVRZxS7rbkl+P8u44MKXYYkzdU2GD5TcWdkApJ1Facu5Pzlqxg==}
+  node-llama-cpp@3.14.2:
+    resolution: {integrity: sha512-g3EttYX6VqdP55JS4ZBWnh6loWM7RBwxffPoeQvUJl1VTZ1MoubAMLzL6DUaXRoXtIilxEAFNdVVXJx6AKAVNQ==}
     engines: {node: '>=20.0.0'}
     hasBin: true
     peerDependencies:
@@ -3328,43 +3318,43 @@ snapshots:
       globby: 11.1.0
       read-yaml-file: 1.1.0
 
-  '@node-llama-cpp/linux-arm64@3.14.0':
+  '@node-llama-cpp/linux-arm64@3.14.2':
     optional: true
 
-  '@node-llama-cpp/linux-armv7l@3.14.0':
+  '@node-llama-cpp/linux-armv7l@3.14.2':
     optional: true
 
-  '@node-llama-cpp/linux-x64-cuda-ext@3.14.0':
+  '@node-llama-cpp/linux-x64-cuda-ext@3.14.2':
     optional: true
 
-  '@node-llama-cpp/linux-x64-cuda@3.14.0':
+  '@node-llama-cpp/linux-x64-cuda@3.14.2':
     optional: true
 
-  '@node-llama-cpp/linux-x64-vulkan@3.14.0':
+  '@node-llama-cpp/linux-x64-vulkan@3.14.2':
     optional: true
 
-  '@node-llama-cpp/linux-x64@3.14.0':
+  '@node-llama-cpp/linux-x64@3.14.2':
     optional: true
 
-  '@node-llama-cpp/mac-arm64-metal@3.14.0':
+  '@node-llama-cpp/mac-arm64-metal@3.14.2':
     optional: true
 
-  '@node-llama-cpp/mac-x64@3.14.0':
+  '@node-llama-cpp/mac-x64@3.14.2':
     optional: true
 
-  '@node-llama-cpp/win-arm64@3.14.0':
+  '@node-llama-cpp/win-arm64@3.14.2':
     optional: true
 
-  '@node-llama-cpp/win-x64-cuda-ext@3.14.0':
+  '@node-llama-cpp/win-x64-cuda-ext@3.14.2':
     optional: true
 
-  '@node-llama-cpp/win-x64-cuda@3.14.0':
+  '@node-llama-cpp/win-x64-cuda@3.14.2':
     optional: true
 
-  '@node-llama-cpp/win-x64-vulkan@3.14.0':
+  '@node-llama-cpp/win-x64-vulkan@3.14.2':
     optional: true
 
-  '@node-llama-cpp/win-x64@3.14.0':
+  '@node-llama-cpp/win-x64@3.14.2':
     optional: true
 
   '@nodelib/fs.scandir@2.1.5':
@@ -3385,8 +3375,8 @@ snapshots:
       '@octokit/auth-unauthenticated': 7.0.2
       '@octokit/core': 7.0.5
       '@octokit/oauth-app': 8.0.3
-      '@octokit/plugin-paginate-rest': 13.2.0(@octokit/core@7.0.5)
-      '@octokit/types': 15.0.0
+      '@octokit/plugin-paginate-rest': 13.2.1(@octokit/core@7.0.5)
+      '@octokit/types': 15.0.1
       '@octokit/webhooks': 14.1.3
 
   '@octokit/auth-app@8.1.1':
@@ -3395,7 +3385,7 @@ snapshots:
       '@octokit/auth-oauth-user': 6.0.1
       '@octokit/request': 10.0.5
       '@octokit/request-error': 7.0.1
-      '@octokit/types': 15.0.0
+      '@octokit/types': 15.0.1
       toad-cache: 3.7.0
       universal-github-app-jwt: 2.2.2
       universal-user-agent: 7.0.3
@@ -3405,14 +3395,14 @@ snapshots:
       '@octokit/auth-oauth-device': 8.0.2
       '@octokit/auth-oauth-user': 6.0.1
       '@octokit/request': 10.0.5
-      '@octokit/types': 15.0.0
+      '@octokit/types': 15.0.1
       universal-user-agent: 7.0.3
 
   '@octokit/auth-oauth-device@8.0.2':
     dependencies:
       '@octokit/oauth-methods': 6.0.1
       '@octokit/request': 10.0.5
-      '@octokit/types': 15.0.0
+      '@octokit/types': 15.0.1
       universal-user-agent: 7.0.3
 
   '@octokit/auth-oauth-user@6.0.1':
@@ -3420,7 +3410,7 @@ snapshots:
       '@octokit/auth-oauth-device': 8.0.2
       '@octokit/oauth-methods': 6.0.1
       '@octokit/request': 10.0.5
-      '@octokit/types': 15.0.0
+      '@octokit/types': 15.0.1
       universal-user-agent: 7.0.3
 
   '@octokit/auth-token@6.0.0': {}
@@ -3428,7 +3418,7 @@ snapshots:
   '@octokit/auth-unauthenticated@7.0.2':
     dependencies:
       '@octokit/request-error': 7.0.1
-      '@octokit/types': 15.0.0
+      '@octokit/types': 15.0.1
 
   '@octokit/core@7.0.5':
     dependencies:
@@ -3436,19 +3426,19 @@ snapshots:
       '@octokit/graphql': 9.0.2
       '@octokit/request': 10.0.5
       '@octokit/request-error': 7.0.1
-      '@octokit/types': 15.0.0
+      '@octokit/types': 15.0.1
       before-after-hook: 4.0.0
       universal-user-agent: 7.0.3
 
   '@octokit/endpoint@11.0.1':
     dependencies:
-      '@octokit/types': 15.0.0
+      '@octokit/types': 15.0.1
       universal-user-agent: 7.0.3
 
   '@octokit/graphql@9.0.2':
     dependencies:
       '@octokit/request': 10.0.5
-      '@octokit/types': 15.0.0
+      '@octokit/types': 15.0.1
       universal-user-agent: 7.0.3
 
   '@octokit/oauth-app@8.0.3':
@@ -3459,7 +3449,7 @@ snapshots:
       '@octokit/core': 7.0.5
       '@octokit/oauth-authorization-url': 8.0.0
       '@octokit/oauth-methods': 6.0.1
-      '@types/aws-lambda': 8.10.156
+      '@types/aws-lambda': 8.10.157
       universal-user-agent: 7.0.3
 
   '@octokit/oauth-authorization-url@8.0.0': {}
@@ -3469,7 +3459,7 @@ snapshots:
       '@octokit/oauth-authorization-url': 8.0.0
       '@octokit/request': 10.0.5
       '@octokit/request-error': 7.0.1
-      '@octokit/types': 15.0.0
+      '@octokit/types': 15.0.1
 
   '@octokit/openapi-types@26.0.0': {}
 
@@ -3479,42 +3469,42 @@ snapshots:
     dependencies:
       '@octokit/core': 7.0.5
 
-  '@octokit/plugin-paginate-rest@13.2.0(@octokit/core@7.0.5)':
+  '@octokit/plugin-paginate-rest@13.2.1(@octokit/core@7.0.5)':
     dependencies:
       '@octokit/core': 7.0.5
-      '@octokit/types': 15.0.0
+      '@octokit/types': 15.0.1
 
-  '@octokit/plugin-rest-endpoint-methods@16.1.0(@octokit/core@7.0.5)':
+  '@octokit/plugin-rest-endpoint-methods@16.1.1(@octokit/core@7.0.5)':
     dependencies:
       '@octokit/core': 7.0.5
-      '@octokit/types': 15.0.0
+      '@octokit/types': 15.0.1
 
   '@octokit/plugin-retry@8.0.2(@octokit/core@7.0.5)':
     dependencies:
       '@octokit/core': 7.0.5
       '@octokit/request-error': 7.0.1
-      '@octokit/types': 15.0.0
+      '@octokit/types': 15.0.1
       bottleneck: 2.19.5
 
   '@octokit/plugin-throttling@11.0.2(@octokit/core@7.0.5)':
     dependencies:
       '@octokit/core': 7.0.5
-      '@octokit/types': 15.0.0
+      '@octokit/types': 15.0.1
       bottleneck: 2.19.5
 
   '@octokit/request-error@7.0.1':
     dependencies:
-      '@octokit/types': 15.0.0
+      '@octokit/types': 15.0.1
 
   '@octokit/request@10.0.5':
     dependencies:
       '@octokit/endpoint': 11.0.1
       '@octokit/request-error': 7.0.1
-      '@octokit/types': 15.0.0
+      '@octokit/types': 15.0.1
       fast-content-type-parse: 3.0.0
       universal-user-agent: 7.0.3
 
-  '@octokit/types@15.0.0':
+  '@octokit/types@15.0.1':
     dependencies:
       '@octokit/openapi-types': 26.0.0
 
@@ -3855,7 +3845,7 @@ snapshots:
       '@tonaljs/voice-leading': 5.1.2
       '@tonaljs/voicing-dictionary': 5.1.2
 
-  '@types/aws-lambda@8.10.156': {}
+  '@types/aws-lambda@8.10.157': {}
 
   '@types/chai@5.2.3':
     dependencies:
@@ -4005,6 +3995,14 @@ snapshots:
     optionalDependencies:
       vite: 7.1.12(@types/node@20.19.20)(tsx@4.20.6)(yaml@2.8.1)
 
+  '@vitest/mocker@4.0.4(vite@7.1.12(@types/node@22.18.10)(tsx@4.20.6)(yaml@2.8.1))':
+    dependencies:
+      '@vitest/spy': 4.0.4
+      estree-walker: 3.0.3
+      magic-string: 0.30.21
+    optionalDependencies:
+      vite: 7.1.12(@types/node@22.18.10)(tsx@4.20.6)(yaml@2.8.1)
+
   '@vitest/pretty-format@4.0.4':
     dependencies:
       tinyrainbow: 3.0.3
@@ -4089,7 +4087,7 @@ snapshots:
 
   asynckit@0.4.0: {}
 
-  axios@1.12.2(debug@4.4.3):
+  axios@1.13.1(debug@4.4.3):
     dependencies:
       follow-redirects: 1.15.11(debug@4.4.3)
       form-data: 4.0.4
@@ -4178,7 +4176,7 @@ snapshots:
 
   cmake-js@7.3.1:
     dependencies:
-      axios: 1.12.2(debug@4.4.3)
+      axios: 1.13.1(debug@4.4.3)
       debug: 4.4.3
       fs-extra: 11.3.2
       memory-stream: 1.0.0
@@ -4926,7 +4924,7 @@ snapshots:
 
   node-api-headers@1.6.0: {}
 
-  node-llama-cpp@3.14.0(typescript@5.9.3):
+  node-llama-cpp@3.14.2(typescript@5.9.3):
     dependencies:
       '@huggingface/jinja': 0.5.1
       async-retry: 1.3.3
@@ -4958,19 +4956,19 @@ snapshots:
       which: 5.0.0
       yargs: 17.7.2
     optionalDependencies:
-      '@node-llama-cpp/linux-arm64': 3.14.0
-      '@node-llama-cpp/linux-armv7l': 3.14.0
-      '@node-llama-cpp/linux-x64': 3.14.0
-      '@node-llama-cpp/linux-x64-cuda': 3.14.0
-      '@node-llama-cpp/linux-x64-cuda-ext': 3.14.0
-      '@node-llama-cpp/linux-x64-vulkan': 3.14.0
-      '@node-llama-cpp/mac-arm64-metal': 3.14.0
-      '@node-llama-cpp/mac-x64': 3.14.0
-      '@node-llama-cpp/win-arm64': 3.14.0
-      '@node-llama-cpp/win-x64': 3.14.0
-      '@node-llama-cpp/win-x64-cuda': 3.14.0
-      '@node-llama-cpp/win-x64-cuda-ext': 3.14.0
-      '@node-llama-cpp/win-x64-vulkan': 3.14.0
+      '@node-llama-cpp/linux-arm64': 3.14.2
+      '@node-llama-cpp/linux-armv7l': 3.14.2
+      '@node-llama-cpp/linux-x64': 3.14.2
+      '@node-llama-cpp/linux-x64-cuda': 3.14.2
+      '@node-llama-cpp/linux-x64-cuda-ext': 3.14.2
+      '@node-llama-cpp/linux-x64-vulkan': 3.14.2
+      '@node-llama-cpp/mac-arm64-metal': 3.14.2
+      '@node-llama-cpp/mac-x64': 3.14.2
+      '@node-llama-cpp/win-arm64': 3.14.2
+      '@node-llama-cpp/win-x64': 3.14.2
+      '@node-llama-cpp/win-x64-cuda': 3.14.2
+      '@node-llama-cpp/win-x64-cuda-ext': 3.14.2
+      '@node-llama-cpp/win-x64-vulkan': 3.14.2
       typescript: 5.9.3
     transitivePeerDependencies:
       - supports-color
@@ -4990,12 +4988,12 @@ snapshots:
       '@octokit/core': 7.0.5
       '@octokit/oauth-app': 8.0.3
       '@octokit/plugin-paginate-graphql': 6.0.0(@octokit/core@7.0.5)
-      '@octokit/plugin-paginate-rest': 13.2.0(@octokit/core@7.0.5)
-      '@octokit/plugin-rest-endpoint-methods': 16.1.0(@octokit/core@7.0.5)
+      '@octokit/plugin-paginate-rest': 13.2.1(@octokit/core@7.0.5)
+      '@octokit/plugin-rest-endpoint-methods': 16.1.1(@octokit/core@7.0.5)
       '@octokit/plugin-retry': 8.0.2(@octokit/core@7.0.5)
       '@octokit/plugin-throttling': 11.0.2(@octokit/core@7.0.5)
       '@octokit/request-error': 7.0.1
-      '@octokit/types': 15.0.0
+      '@octokit/types': 15.0.1
       '@octokit/webhooks': 14.1.3
 
   onetime@7.0.0:
@@ -5607,7 +5605,7 @@ snapshots:
   vitest@4.0.4(@types/node@22.18.10)(tsx@4.20.6)(yaml@2.8.1):
     dependencies:
       '@vitest/expect': 4.0.4
-      '@vitest/mocker': 4.0.4(vite@7.1.12(@types/node@20.19.20)(tsx@4.20.6)(yaml@2.8.1))
+      '@vitest/mocker': 4.0.4(vite@7.1.12(@types/node@22.18.10)(tsx@4.20.6)(yaml@2.8.1))
       '@vitest/pretty-format': 4.0.4
       '@vitest/runner': 4.0.4
       '@vitest/snapshot': 4.0.4
