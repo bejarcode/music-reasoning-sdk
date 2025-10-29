@@ -25,8 +25,8 @@ importers:
         specifier: ^9.0.0
         version: 9.37.0
       eslint-config-prettier:
-        specifier: ^9.0.0
-        version: 9.1.2(eslint@9.37.0)
+        specifier: ^10.1.8
+        version: 10.1.8(eslint@9.37.0)
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -51,16 +51,6 @@ importers:
       vitest:
         specifier: ^4.0.4
         version: 4.0.4(@types/node@20.19.20)(tsx@4.20.6)(yaml@2.8.1)
-
-  apps/web:
-    dependencies:
-      '@music-reasoning/sdk':
-        specifier: workspace:*
-        version: link:../../packages/sdk
-    devDependencies:
-      typescript:
-        specifier: ^5.6.3
-        version: 5.9.3
 
   packages/ai-local:
     dependencies:
@@ -1642,8 +1632,8 @@ packages:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
     engines: {node: '>=10'}
 
-  eslint-config-prettier@9.1.2:
-    resolution: {integrity: sha512-iI1f+D2ViGn+uvv5HuHVUamg8ll4tN+JRHGc6IJi4TP9Kl976C57fzPXgseXNs8v0iA8aSJpHsTWjDb9QJamGQ==}
+  eslint-config-prettier@10.1.8:
+    resolution: {integrity: sha512-82GZUjRS0p/jganf6q1rEO25VSoHH0hKPCTrgillPjdI/3bgBhAE1QzHrHTizjpRvy6pGAvKjDJtk2pF9NDq8w==}
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
@@ -4005,6 +3995,14 @@ snapshots:
     optionalDependencies:
       vite: 7.1.12(@types/node@20.19.20)(tsx@4.20.6)(yaml@2.8.1)
 
+  '@vitest/mocker@4.0.4(vite@7.1.12(@types/node@22.18.10)(tsx@4.20.6)(yaml@2.8.1))':
+    dependencies:
+      '@vitest/spy': 4.0.4
+      estree-walker: 3.0.3
+      magic-string: 0.30.21
+    optionalDependencies:
+      vite: 7.1.12(@types/node@22.18.10)(tsx@4.20.6)(yaml@2.8.1)
+
   '@vitest/pretty-format@4.0.4':
     dependencies:
       tinyrainbow: 3.0.3
@@ -4347,7 +4345,7 @@ snapshots:
 
   escape-string-regexp@4.0.0: {}
 
-  eslint-config-prettier@9.1.2(eslint@9.37.0):
+  eslint-config-prettier@10.1.8(eslint@9.37.0):
     dependencies:
       eslint: 9.37.0
 
@@ -5607,7 +5605,7 @@ snapshots:
   vitest@4.0.4(@types/node@22.18.10)(tsx@4.20.6)(yaml@2.8.1):
     dependencies:
       '@vitest/expect': 4.0.4
-      '@vitest/mocker': 4.0.4(vite@7.1.12(@types/node@20.19.20)(tsx@4.20.6)(yaml@2.8.1))
+      '@vitest/mocker': 4.0.4(vite@7.1.12(@types/node@22.18.10)(tsx@4.20.6)(yaml@2.8.1))
       '@vitest/pretty-format': 4.0.4
       '@vitest/runner': 4.0.4
       '@vitest/snapshot': 4.0.4
