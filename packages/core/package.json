@@ -1,0 +1,77 @@
+{
+  "name": "@music-reasoning/core",
+  "version": "0.1.0",
+  "description": "Deterministic music theory engine for Music Reasoning SDK",
+  "author": "Bejar LLC <me@victorbejar.com> (https://musicreasoningsdk.com)",
+  "homepage": "https://musicreasoningsdk.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bejarcode/music-reasoning-sdk.git",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/bejarcode/music-reasoning-sdk/issues",
+    "email": "me@victorbejar.com"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:ci": "vitest run --exclude='**/benchmarks/progression-performance.test.ts' --exclude='**/integration/full-workflow.test.ts'",
+    "test:unit": "vitest run test/unit",
+    "test:golden": "vitest run test/golden",
+    "test:benchmarks": "vitest run test/benchmarks",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist .tsbuildinfo",
+    "benchmark:baseline": "tsx scripts/baseline.ts"
+  },
+  "keywords": [
+    "music-theory",
+    "chord",
+    "scale",
+    "tonal"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@music-reasoning/types": "workspace:*"
+  },
+  "peerDependencies": {
+    "tonal": "^6.0.0"
+  },
+  "devDependencies": {
+    "@music-reasoning/types": "workspace:*",
+    "@types/node": "^22.0.0",
+    "@vitest/coverage-v8": "^4.0.4",
+    "tonal": "^6.0.0",
+    "tsup": "^8.3.5",
+    "tsx": "^4.0.0",
+    "typescript": "^5.6.3",
+    "vitest": "^4.0.4"
+  }
+}

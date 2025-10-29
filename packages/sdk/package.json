@@ -1,0 +1,71 @@
+{
+  "name": "@music-reasoning/sdk",
+  "version": "0.1.0",
+  "description": "Offline-first music theory intelligence SDK with local AI",
+  "author": "Bejar LLC <me@victorbejar.com> (https://musicreasoningsdk.com)",
+  "homepage": "https://musicreasoningsdk.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bejarcode/music-reasoning-sdk.git",
+    "directory": "packages/sdk"
+  },
+  "bugs": {
+    "url": "https://github.com/bejarcode/music-reasoning-sdk/issues",
+    "email": "me@victorbejar.com"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "examples",
+    "README.md",
+    "CHANGELOG.md",
+    "PERFORMANCE.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run --passWithNoTests",
+    "test:unit": "vitest run --testPathPattern=unit --passWithNoTests",
+    "test:integration": "vitest run --testPathPattern=integration --passWithNoTests",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist .tsbuildinfo"
+  },
+  "dependencies": {
+    "@music-reasoning/ai-local": "workspace:*",
+    "@music-reasoning/core": "workspace:*",
+    "@music-reasoning/types": "workspace:*"
+  },
+  "peerDependencies": {
+    "tonal": "^6.0.0"
+  },
+  "devDependencies": {
+    "@music-reasoning/core": "workspace:*",
+    "@music-reasoning/types": "workspace:*",
+    "tonal": "^6.0.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3",
+    "vitest": "^4.0.4"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "publishConfig": {
+    "access": "public"
+  }
+}

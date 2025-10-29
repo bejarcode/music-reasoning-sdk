@@ -1,0 +1,111 @@
+name: Mirror to Public & Publish to npm
+
+on:
+  push:
+    tags:
+      - 'v*'  # Trigger on version tags (v0.1.0, v0.2.0, etc.)
+
+jobs:
+  mirror-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout private repo
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history for changelog generation
+
+      # 2. Setup Node.js and pnpm
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 9
+
+      # 3. Install dependencies
+      - run: pnpm install --frozen-lockfile
+
+      # 4. Build all packages (dependencies first, then SDK)
+      - run: pnpm --filter @music-reasoning/types build
+      - run: pnpm --filter @music-reasoning/core build
+      - run: pnpm --filter @music-reasoning/ai-local build
+      - run: pnpm --filter @music-reasoning/sdk build
+
+      # 5. Run tests (ensure quality before release)
+      # Note: core uses test:ci to skip hardware-dependent performance tests
+      - run: pnpm --filter @music-reasoning/core test:ci
+      - run: pnpm --filter @music-reasoning/sdk test
+      - run: pnpm --filter @music-reasoning/ai-local test
+
+      # 6. Mirror to public repository
+      - name: Mirror to public repo
+        run: |
+          # Clone public repo
+          git clone https://bejarcode:${{ secrets.PUBLIC_REPO_TOKEN }}@github.com/bejarcode/music-reasoning-sdk.git public-mirror
+
+          # Clear public repo (except .git)
+          cd public-mirror
+          find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+
+          # Copy curated files from private repo
+          cd ..
+
+          # Copy open-source packages (full source)
+          mkdir -p public-mirror/packages
+          cp -r packages/types public-mirror/packages/types
+          cp -r packages/core public-mirror/packages/core
+
+          # Copy commercial packages (dist/ only)
+          mkdir -p public-mirror/packages/sdk
+          cp -r packages/sdk/dist public-mirror/packages/sdk/
+          cp -r packages/sdk/examples public-mirror/packages/sdk/
+          cp packages/sdk/README.md public-mirror/packages/sdk/
+          cp packages/sdk/CHANGELOG.md public-mirror/packages/sdk/
+          cp packages/sdk/PERFORMANCE.md public-mirror/packages/sdk/
+          cp packages/sdk/LICENSE public-mirror/packages/sdk/
+          cp packages/sdk/package.json public-mirror/packages/sdk/
+
+          # Copy root files
+          cp README.md public-mirror/
+          cp LICENSE public-mirror/
+          cp package.json public-mirror/
+          cp pnpm-workspace.yaml public-mirror/
+          cp pnpm-lock.yaml public-mirror/
+
+          # Commit and push to public repo
+          cd public-mirror
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "Release ${{ github.ref_name }}"
+          git tag -f ${{ github.ref_name }}  # Force overwrite if tag exists
+          git push origin main
+          git push -f origin ${{ github.ref_name }}  # Force push tag
+
+      # 7. Publish to npm (all packages)
+      # TEMPORARILY DISABLED: Requires @music-reasoning npm organization to be created first
+      # To enable: Create organization at https://npmjs.com → Add Organization → "music-reasoning"
+      # Then uncomment this step
+      # - name: Publish to npm
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      #   run: |
+      #     # Publish from public mirror (ensures we publish what users will see)
+      #     cd public-mirror
+      #
+      #     # Publish open-source packages
+      #     cd packages/types
+      #     pnpm publish --access public --no-git-checks
+      #     cd ../core
+      #     pnpm publish --access public --no-git-checks
+      #
+      #     # Publish commercial packages
+      #     cd ../sdk
+      #     pnpm publish --access public --no-git-checks
+      #
+      #     # Future: ai-local
+      #     # cd ../ai-local
+      #     # pnpm publish --access public --no-git-checks
